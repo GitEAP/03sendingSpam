@@ -40,17 +40,18 @@
 			}
 			&.submitbutton {
 				display: block;
-				border: #f0d5cc 1px solid;
+				border: $secondaryColor 1px solid;
 				padding: .75em;
-				background-color: #F0D5CC;
+				background: none;
+				@include border-radius(20px);
 				color: $primaryColor;
 				font-size: .75em;
 				margin: .75em 0;
-				transition: border-radius .75s ease, background-color .75s ease;
+				transition: color .75s ease, background-color .75s ease;
 				&:hover {
-					background: none;
-					@include border-radius(20px);
-					border: $secondaryColor 1px solid;
+					background-color: $secondaryColor;
+					color: $whiteColor;
+	
 				}
 			}
 		}//end of input

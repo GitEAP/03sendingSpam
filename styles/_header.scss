@@ -1,5 +1,5 @@
 .headerWrapper {
-	background-image: url(../images/yogurtBG.jpeg);
+	background-image: url(../images/equalizer.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 400px;
@@ -10,15 +10,14 @@
 		padding-top: 20px;
 		font-size: 3em;
 		text-align: center;
-		color: $primaryColor;
+		color: $whiteColor;
 		@include text-shadow(0px, 0px, 1px, #000);
 	}
 	h2 {
-
-		font-size: 2em;
-		letter-spacing: .075em;
+		padding-top: 10px;
+		font-size: 1.75em;
 		text-align: center;
-		color: $primaryColor;
+		color: $whiteColor;
 		@include text-shadow(0px, 0px, 1px, #000);
 	}
 }
@@ -34,22 +33,24 @@
 	a {
 		text-decoration: none;
 		font-size: 1.45em;
-		color: $secondaryColor;
-		@include text-shadow(1px, 1px, 1px, #000);
+		color: $whiteColor;
 	}
 	.active  {
-		background-color: $thirdColor;
+		background-color: $whiteColor;
+		a {
+			color: $secondaryColor;
+		}
 	}
 }
-@media screen and (min-width: 566px) { //480
+@media screen and (min-width: 566px) {
 	.headerWrapper {
-		height: 300px;
+		height: 250px;
 		h1 {
 			padding-top: 30px;
 		}
 	}
 	.nav {
-		width: 560px;
+		width: 470px;//adjust when adding or removing anchors on main nav.
 		background-color: none;
 		margin-top: 75px;
 		margin-left: auto;
@@ -59,8 +60,10 @@
 			float: left;
 			padding: .5em;
 			transition: background-color .4s linear;
+					border-right: $whiteColor solid 1px;
+
 			&:hover {
-				background-color: $thirdColor;
+				background-color: $whiteColor;
 			}
 		}
 		a {
@@ -68,7 +71,7 @@
 			font-size: 1.3em;
 			transition: color .4s linear;
 			&:hover {
-				color: $primaryColor;
+				color: $blackColor;
 			}
 	}
 	}//end of .nav

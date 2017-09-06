@@ -69,26 +69,26 @@ body {
   clear: both; }
 
 .headerWrapper {
-  background-image: url(../images/yogurtBG.jpeg);
+  background-image: url(../images/equalizer.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
   background-position: center;
-  font-family: "Baloo Bhaijaan", cursive; }
+  font-family: "Francois One", sans-serif; }
   .headerWrapper h1 {
     padding-top: 20px;
     font-size: 3em;
     text-align: center;
-    color: #ee4c7c;
+    color: #e7dfdd;
     -webkit-text-shadow: 0px 0px 1px #000;
     -moz-text-shadow: 0px 0px 1px #000;
     -ms-text-shadow: 0px 0px 1px #000;
     text-shadow: 0px 0px 1px #000; }
   .headerWrapper h2 {
-    font-size: 2em;
-    letter-spacing: .075em;
+    padding-top: 10px;
+    font-size: 1.75em;
     text-align: center;
-    color: #ee4c7c;
+    color: #e7dfdd;
     -webkit-text-shadow: 0px 0px 1px #000;
     -moz-text-shadow: 0px 0px 1px #000;
     -ms-text-shadow: 0px 0px 1px #000;
@@ -104,22 +104,20 @@ body {
   .nav a {
     text-decoration: none;
     font-size: 1.45em;
-    color: #84ceeb;
-    -webkit-text-shadow: 1px 1px 1px #000;
-    -moz-text-shadow: 1px 1px 1px #000;
-    -ms-text-shadow: 1px 1px 1px #000;
-    text-shadow: 1px 1px 1px #000; }
+    color: #e7dfdd; }
   .nav .active {
-    background-color: #edc7b7; }
+    background-color: #e7dfdd; }
+    .nav .active a {
+      color: #a239ca; }
 
 @media screen and (min-width: 566px) {
   .headerWrapper {
-    height: 300px; }
+    height: 250px; }
     .headerWrapper h1 {
       padding-top: 30px; }
 
   .nav {
-    width: 560px;
+    width: 470px;
     background-color: none;
     margin-top: 75px;
     margin-left: auto;
@@ -127,30 +125,31 @@ body {
     .nav li {
       float: left;
       padding: .5em;
-      transition: background-color .4s linear; }
+      transition: background-color .4s linear;
+      border-right: #e7dfdd solid 1px; }
       .nav li:hover {
-        background-color: #edc7b7; }
+        background-color: #e7dfdd; }
     .nav a {
       display: block;
       font-size: 1.3em;
       transition: color .4s linear; }
       .nav a:hover {
-        color: #ee4c7c; } }
+        color: #0e0b16; } }
 footer {
   margin-top: 25px;
   padding: 10px;
-  background-color: #FAF1EE; }
+  background-color: #0e0b16; }
   footer p {
     font-size: .75em;
     text-align: center;
-    color: #ee4c7c; }
+    color: #e7dfdd; }
 
 .default {
   padding: 0 2%;
   min-height: 350px; }
   .default h1 {
     font-size: 1.8em;
-    color: #ee4c7c;
+    color: #2a0e91;
     padding: 20px 0; }
   .default p {
     font-size: 1em;
@@ -160,14 +159,14 @@ footer {
   padding: 0 2%; }
   .ContentContact h1 {
     font-size: 1.8em;
-    color: #ee4c7c;
+    color: #2a0e91;
     padding: 40px 0 20px 0; }
   .ContentContact .contactForm {
     padding: 0 4%; }
     .ContentContact .contactForm fieldset {
       padding: .5em 0; }
     .ContentContact .contactForm legend {
-      color: #84ceeb;
+      color: #a239ca;
       padding: .25em 0 0 0;
       font-size: 1.25em; }
     .ContentContact .contactForm label {
@@ -188,20 +187,20 @@ footer {
       padding: .75em; }
     .ContentContact .contactForm input.submitbutton {
       display: block;
-      border: #f0d5cc 1px solid;
+      border: #a239ca 1px solid;
       padding: .75em;
-      background-color: #F0D5CC;
-      color: #ee4c7c;
+      background: none;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      border-radius: 20px;
+      color: #2a0e91;
       font-size: .75em;
       margin: .75em 0;
-      transition: border-radius .75s ease, background-color .75s ease; }
+      transition: color .75s ease, background-color .75s ease; }
       .ContentContact .contactForm input.submitbutton:hover {
-        background: none;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        border-radius: 20px;
-        border: #84ceeb 1px solid; }
+        background-color: #a239ca;
+        color: #e7dfdd; }
     .ContentContact .contactForm .contactOptions {
       margin-left: 10px; }
     .ContentContact .contactForm .message {
