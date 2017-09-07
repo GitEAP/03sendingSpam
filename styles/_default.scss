@@ -1,5 +1,5 @@
 .default {
-	padding: 0 2%;
+	padding: 0 2% 25px 2%;
 	min-height: 350px;
 	h1 {
 		font-size: 1.8em;
@@ -9,5 +9,12 @@
 	p {
 		font-size: 1em;
 		padding: 1.4em 0;
+	}
+}
+
+@media screen and (min-width: 566px) { 
+	.ContentContact {
+		max-width: 1140px;
+		margin: 0 auto;
 	}
 }

@@ -1,3 +1,21 @@
+<?php
+//declare variables
+$first_name = $_POST[firstName];
+$last_name = $_POST[lastName];
+$email = $_POST[email];
+
+//Build database connection with host, user, pass, database
+$dbconnection = mysqli_connect('localhost','erickper_3760usr','OcaC)hJzA}Wd','erickper_3760') or die('Connection to the database failed');
+
+//Build query
+$query = "INSERT INTO newsletter (first, last, email)" . "VALUES ('$first_name', '$last_name', '$email')";
+
+//talk to database
+$result = mysqli_query($dbconnection, $query) or die('Query failed');
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,6 +32,7 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
+<meta http-equiv="refresh" content="10; URL=index.html">
 </head>
 
 <body>
@@ -34,32 +53,11 @@
 	</div>
 </div>
 
-<main class="ContentContact">
-	<h1>Sign up for Our Newsletter</h1>
+<main class="default">
+	<h1>Thanks for signing up for the newsletter.</h1>
 	
-	<form action="saveToDB.php" method="POST" enctype="multipart/form-data" class="contactForm">
 	
-		<fieldset>
-			<legend>Personal Information</legend>
-			<label><span>First Name:</span><input name="firstName" type="text" placeholder="John" pattern="[a-zA-Z -.]{3,999}"  class="userInput" required></label>
-			<label><span>Last Name:</span><input name="lastName" type="text" placeholder="Doe" pattern="[a-zA-Z -.]{3,999}" class="userInput" required></label>
-			<label><span>Email:</span><input name="email" type="email" placeholder="yourname@myemail.com"  class="userInput" required></label>
-			
-<!--
-			
-			<label class="messageLabel"><span>Message:</span>
-			<textarea class="message" name="contactMessage"></textarea></label>
-			
--->
-		</fieldset>
 	
-	<input class="submitbutton" name="submitbutton" value="Sign Up" type="submit">
-	<input type="hidden" value="saveToDB.php" name="redirect">
-	</form>
-	
-	<hr>
-	
-	<a href="makeMessage.php" class="linkButton">Spam a Message</a>
 </main>
 
 

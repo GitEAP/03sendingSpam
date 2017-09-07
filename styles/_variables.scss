@@ -9,6 +9,11 @@ $blackColor: #0e0b16;
 //Global styles
 body {
 	font-family: $bodyFont;
+background: #ffffff;
+background: -moz-radial-gradient(center, ellipse cover, #ffffff 40%, #ededed 100%);
+background: -webkit-radial-gradient(center, ellipse cover, #ffffff 40%,#ededed 100%);
+background: radial-gradient(ellipse at center, #ffffff 40%,#ededed 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 );
 }
 //Mixin's
 @mixin border-radius($radius) {

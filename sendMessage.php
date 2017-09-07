@@ -1,3 +1,21 @@
+<?php
+
+//declare variables
+$subject = $_POST[subject];
+$message = $_POST[emailMessage];
+$from = "NBA_EAP@hotmail.com";
+
+//Build database connection with host, user, pass, database
+$dbconnection = mysqli_connect('localhost','erickper_3760usr','OcaC)hJzA}Wd','erickper_3760') or die('Connection to the database failed');
+
+//Build query
+$query = "SELECT * FROM newsletter";
+
+//talk to database
+$result = mysqli_query($dbconnection, $query) or die('Query failed');
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,6 +32,7 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
+<meta http-equiv="refresh" content="10; URL=makeMessage.php">
 </head>
 
 <body>
@@ -28,38 +47,33 @@
 			<li><a href="#">Music</a></li>
 			<li><a href="#">Movies</a></li>
 			<li><a href="#">Location</a></li>
-			<li class="active"><a href="index.html">Newsletter</a></li>
+			<li><a href="index.html">Newsletter</a></li>
 			<li><a href="#">Blog</a></li>
 		</ul>
 	</div>
 </div>
 
-<main class="ContentContact">
-	<h1>Sign up for Our Newsletter</h1>
+<main class="default">
+<h1>Your message was sent to your interested people</h1>
 	
-	<form action="saveToDB.php" method="POST" enctype="multipart/form-data" class="contactForm">
+<?php
+//get info and send email
+while($row = mysqli_fetch_array($result)) {
+	$first_name = $row['first'];
+	$last_name = $row['last'];
+	$to = $row['email'];
+	//make email message to send
+	$text = "Dear $first_name $last_name, \n $message";
+	//sending message
+	mail($to, $subject, $text, 'From: ' . $from);
+
+	echo "Message sent to: " . $to . "<br>";
+};
+
+//end connection
+mysqli_close($dbconnection);
+?>
 	
-		<fieldset>
-			<legend>Personal Information</legend>
-			<label><span>First Name:</span><input name="firstName" type="text" placeholder="John" pattern="[a-zA-Z -.]{3,999}"  class="userInput" required></label>
-			<label><span>Last Name:</span><input name="lastName" type="text" placeholder="Doe" pattern="[a-zA-Z -.]{3,999}" class="userInput" required></label>
-			<label><span>Email:</span><input name="email" type="email" placeholder="yourname@myemail.com"  class="userInput" required></label>
-			
-<!--
-			
-			<label class="messageLabel"><span>Message:</span>
-			<textarea class="message" name="contactMessage"></textarea></label>
-			
--->
-		</fieldset>
-	
-	<input class="submitbutton" name="submitbutton" value="Sign Up" type="submit">
-	<input type="hidden" value="saveToDB.php" name="redirect">
-	</form>
-	
-	<hr>
-	
-	<a href="makeMessage.php" class="linkButton">Spam a Message</a>
 </main>
 
 

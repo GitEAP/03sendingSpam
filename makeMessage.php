@@ -28,38 +28,28 @@
 			<li><a href="#">Music</a></li>
 			<li><a href="#">Movies</a></li>
 			<li><a href="#">Location</a></li>
-			<li class="active"><a href="index.html">Newsletter</a></li>
+			<li><a href="index.html">Newsletter</a></li>
 			<li><a href="#">Blog</a></li>
 		</ul>
 	</div>
 </div>
 
 <main class="ContentContact">
-	<h1>Sign up for Our Newsletter</h1>
+	<h1>Spam a Message</h1>
 	
-	<form action="saveToDB.php" method="POST" enctype="multipart/form-data" class="contactForm">
+	<form action="sendMessage.php" method="POST" enctype="multipart/form-data" class="contactForm">
 	
 		<fieldset>
-			<legend>Personal Information</legend>
-			<label><span>First Name:</span><input name="firstName" type="text" placeholder="John" pattern="[a-zA-Z -.]{3,999}"  class="userInput" required></label>
-			<label><span>Last Name:</span><input name="lastName" type="text" placeholder="Doe" pattern="[a-zA-Z -.]{3,999}" class="userInput" required></label>
-			<label><span>Email:</span><input name="email" type="email" placeholder="yourname@myemail.com"  class="userInput" required></label>
-			
-<!--
+			<legend>Make a Message</legend>
+			<label><span>Subject:</span><input name="subject" type="text" placeholder="email subject" pattern="[a-zA-Z -.,/0-9]{1,999}"  class="userInput" required></label>
 			
 			<label class="messageLabel"><span>Message:</span>
-			<textarea class="message" name="contactMessage"></textarea></label>
-			
--->
+			<textarea class="message" name="emailMessage" placeholder="Enter message..."></textarea></label>
 		</fieldset>
 	
-	<input class="submitbutton" name="submitbutton" value="Sign Up" type="submit">
-	<input type="hidden" value="saveToDB.php" name="redirect">
+	<input class="submitbutton" name="submitbutton" value="Send Emails" type="submit">
+	<input type="hidden" value="sendMessage.php" name="redirect">
 	</form>
-	
-	<hr>
-	
-	<a href="makeMessage.php" class="linkButton">Spam a Message</a>
 </main>
 
 

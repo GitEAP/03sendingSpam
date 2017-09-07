@@ -60,19 +60,21 @@
 			float: left;
 			padding: .5em;
 			transition: background-color .4s linear;
-					border-right: $whiteColor solid 1px;
-
+			border-right: $whiteColor solid 1px;
+			&:last-child {
+				border: none;
+			}
 			&:hover {
 				background-color: $whiteColor;
+				a {
+					color: $blackColor;
+				}
 			}
 		}
 		a {
 			display: block;
 			font-size: 1.3em;
 			transition: color .4s linear;
-			&:hover {
-				color: $blackColor;
-			}
 	}
 	}//end of .nav
 }//end of media query

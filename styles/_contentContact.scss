@@ -1,12 +1,35 @@
 .ContentContact {
-	padding: 0 2%;
+	padding: 0 2% 25px 2%;
 	h1 {
 		font-size: 1.8em;
 		color: $primaryColor;
 		padding: 40px 0 20px 0;
 	}
+	a.linkButton {
+		text-decoration: none;
+		color: $secondaryColor;
+		margin: 1em 0;
+		padding: .75em;
+		text-align: center;
+		width: 45%;
+		display: block;
+		border: 1px solid $secondaryColor;
+		@include border-radius(15px);
+		transition: color .75s ease, border-color .75s ease, background-color .75s ease;
+		
+		&:hover {
+			color: $whiteColor;
+			border-color: $primaryColor;
+			background-color: $primaryColor;
+		}
+	}//end of a linkbutton
+	hr {
+		height: 1px;
+		color: $primaryColor;
+	}
 	.contactForm{
 		padding: 0 4%;
+		margin-bottom: 2em;
 		fieldset {
 			padding: .5em 0;
 		}
@@ -64,23 +87,30 @@
 			height: 100px;
 			margin-top: .2em;
 			border: 1px solid #E3E3E3;
+			padding: .75em;
 		}
 	}//end of contact form
 	
 }//end of content
 @media screen and (min-width: 566px) { 
 	.ContentContact {
+		max-width: 1140px;
+		margin-left: auto;
+		margin-right: auto;
 		h1 {
 			padding-top: 20px;
+		}
+		a.linkButton {
+			width: 15%;
 		}
 		.contactForm{
 			input {
 				&.userInput {
-					width: 40%;
+					width: 60%;
 				}
 			}
 			.message {
-				width: 40%;
+				width: 60%;
 			}
 		}//end of contact form
 	}//end of content contact
