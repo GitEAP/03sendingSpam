@@ -1,11 +1,13 @@
 <?php
+require_once('connectvars.php');
+
 //declare variables
 $first_name = $_POST[firstName];
 $last_name = $_POST[lastName];
 $email = $_POST[email];
 
 //Build database connection with host, user, pass, database
-$dbconnection = mysqli_connect('localhost','erickper_3760usr','OcaC)hJzA}Wd','erickper_3760') or die('Connection to the database failed');
+$dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ('connection failed');
 
 //Build query
 $query = "INSERT INTO newsletter (first, last, email)" . "VALUES ('$first_name', '$last_name', '$email')";

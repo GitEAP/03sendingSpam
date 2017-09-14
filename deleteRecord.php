@@ -43,8 +43,10 @@
 			<legend>Subscribers:</legend>
 <!-- connect to the database, check if checkboxs have been selected, else get table data, and display the data as a checkbox. -->
 			<?php 
+			require_once('connectvars.php');
+
 				//Build database connection with host, user, pass, database
-				$dbconnection = mysqli_connect('localhost','erickper_3760usr','OcaC)hJzA}Wd','erickper_3760') or die('Connection to the database failed');
+				$dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ('connection failed');
 
 				//-------------------------Delete the Records--------------------------			
 				if (isset($_POST['submitbutton'])) {

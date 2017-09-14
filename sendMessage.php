@@ -1,12 +1,12 @@
 <?php
-
+require_once('connectvars.php');
 //declare variables
 $subject = $_POST[subject];
 $message = $_POST[emailMessage];
 $from = "NBA_EAP@hotmail.com";
 
 //Build database connection with host, user, pass, database
-$dbconnection = mysqli_connect('localhost','erickper_3760usr','OcaC)hJzA}Wd','erickper_3760') or die('Connection to the database failed');
+$dbconnection = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die ('connection failed');
 
 //Build query
 $query = "SELECT * FROM newsletter";
